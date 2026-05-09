@@ -26,7 +26,7 @@ export default function MemoryArchitecture() {
   const [form, setForm] = useState({
     name: "",
     email: "",
-    style: "standard",
+    style: "premium",
     interior: false,
     notes: "",
   });
@@ -204,12 +204,12 @@ export default function MemoryArchitecture() {
         }
       }
 
-      setForm({ name: "", email: "", style: "standard", interior: false, notes: "" });
+      setForm({ name: "", email: "", style: "premium", interior: false, notes: "" });
       clearAllFiles();
 
       setSubmitMessage({
         type: "success",
-        text: "Your request has been captured. We'll be in touch within 24h.",
+        text: "Your request has been captured. We'll be in touch within 24h via email.",
       });
     } catch (err) {
       console.error(err);
@@ -593,7 +593,7 @@ export default function MemoryArchitecture() {
         <div style={styles.heroVideoSection}>
           <div style={styles.heroVideoWrap}>
             <iframe
-              src="https://www.youtube.com/embed/nk54iRRgvQk?autoplay=1&mute=1&playsinline=1"
+              src="https://www.youtube.com/embed/Vp4YC281SZM?autoplay=1&mute=1&playsinline=1"
               title="Memory Architecture — showcase video"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
               allowFullScreen
@@ -636,6 +636,17 @@ export default function MemoryArchitecture() {
                 </div>
               </div>
 
+              <p
+                style={{
+                  fontSize: "12px",
+                  color: "#9B8C7E",
+                  lineHeight: 1.5,
+                  margin: "0 0 16px",
+                }}
+              >
+                Your name and email address will be used for communication and order tracking.
+              </p>
+
               <div style={styles.row2cols}>
                 <div>
                   <label style={styles.label}>Edition</label>
@@ -645,9 +656,9 @@ export default function MemoryArchitecture() {
                     onChange={handleChange}
                     style={{ ...styles.input, cursor: "pointer" }}
                   >
-                    <option value="standard">Standard — $699+</option>
-                    <option value="premium">Premium — $999+</option>
-                    <option value="collector">Collector — $1499+</option>
+                    <option value="standard">Standard — $699</option>
+                    <option value="premium">Premium — $999</option>
+                    <option value="collector">Collector — $1199</option>
                   </select>
                 </div>
                 <div style={styles.checkboxWrapper}>
@@ -660,7 +671,7 @@ export default function MemoryArchitecture() {
                     style={{ width: "16px", height: "16px", accentColor: "#C98A7A" }}
                   />
                   <label htmlFor="interior" style={styles.label}>
-                    + Interior detailing (add $200)
+                    + Priority Production (+$99)
                   </label>
                 </div>
               </div>
@@ -720,7 +731,7 @@ export default function MemoryArchitecture() {
                   value={form.notes}
                   onChange={handleChange}
                   rows="3"
-                  placeholder="Tell us a story — the smell of cookies in the kitchen, morning light through the bay window, the old oak tree..."
+                  placeholder="Share the spaces and details that mattered most - the column where you loved to sit in the sun, the dining table where your family gathered, the staircase your pets always ran through..."
                   style={styles.textarea}
                   onFocus={(e) => (e.target.style.borderColor = "#C98A7A")}
                   onBlur={(e) => (e.target.style.borderColor = "#E5D9D0")}
@@ -758,6 +769,31 @@ export default function MemoryArchitecture() {
               <p style={{ fontSize: "12px", textAlign: "center", color: "#9B8C7E", marginTop: "12px" }}>
                 Our artisans will reach out within 24 hours.
               </p>
+
+              <div style={{ marginTop: "24px", paddingTop: "16px", borderTop: "1px solid #E5D9D0" }}>
+                <p style={{ fontSize: "0.875rem", fontWeight: 300, letterSpacing: "0.3px", margin: "0 0 8px" }}>
+                  Contact us
+                </p>
+                <div style={{ fontSize: "0.875rem", color: "#6B625A", lineHeight: 1.6 }}>
+                  <div>
+                    Email:{" "}
+                    <a href="mailto:h9g6c0@gmail.com" style={{ color: "#C98A7A", textDecoration: "none" }}>
+                      h9g6c0@gmail.com
+                    </a>
+                  </div>
+                  <div>
+                    WhatsApp:{" "}
+                    <a
+                      href="https://wa.me/8613816786022"
+                      target="_blank"
+                      rel="noreferrer"
+                      style={{ color: "#C98A7A", textDecoration: "none" }}
+                    >
+                      +86 13816786022
+                    </a>
+                  </div>
+                </div>
+              </div>
             </form>
           </div>
 
@@ -805,23 +841,23 @@ export default function MemoryArchitecture() {
             <div style={styles.infoCard}>
               <h3 style={styles.infoTitle}>Why this matters</h3>
               <ul style={{ listStyle: "none", paddingLeft: 0, margin: "16px 0 0" }}>
-                <li style={styles.listItem}>— A memory that grows with your family</li>
-                <li style={styles.listItem}>— Built with precision, finished by hand</li>
+                <li style={styles.listItem}>— Enhance client satisfaction with a lasting keepsake</li>
+                <li style={styles.listItem}>— Shareable, memorable, and unique</li>
                 <li style={styles.listItem}>— Every detail tells a story</li>
-                <li style={styles.listItem}>— Holding the warmth of everyday moments</li>
+                <li style={styles.listItem}>— Built with precision, finished by hand</li>
               </ul>
               <div style={styles.divider}>
                 <div style={styles.priceRow}>
-                  <span>Standard</span>
-                  <span style={styles.priceValue}>$699+</span>
+                  <span>Standard (no int. structure)</span>
+                  <span style={styles.priceValue}>$699</span>
                 </div>
                 <div style={styles.priceRow}>
                   <span>Premium (int. structure)</span>
-                  <span style={styles.priceValue}>$999+</span>
+                  <span style={styles.priceValue}>$999</span>
                 </div>
                 <div style={styles.priceRow}>
-                  <span>Collector (full detail)</span>
-                  <span style={styles.priceValue}>$1499+</span>
+                  <span>Collector (int. structure with funitures)</span>
+                  <span style={styles.priceValue}>$1199</span>
                 </div>
                 <p style={styles.footnote}>*estimated, based on architecture complexity</p>
               </div>
