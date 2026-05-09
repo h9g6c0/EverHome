@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import { supabase } from "./supabaseClient";
 
 function normalizeImageUrls(raw) {
@@ -22,6 +22,7 @@ export default function MemoryArchitecture() {
   const STORAGE_BUCKET = "home-photos";
   const MAX_IMAGES = 8;
   const UPDATES_TABLE = "client_request_updates";
+  const MOBILE_BREAKPOINT_PX = 900;
 
   const [form, setForm] = useState({
     name: "",
@@ -40,6 +41,14 @@ export default function MemoryArchitecture() {
   const [trackError, setTrackError] = useState(null);
   const [trackRequest, setTrackRequest] = useState(null);
   const [trackUpdates, setTrackUpdates] = useState([]);
+
+  const [isMobile, setIsMobile] = useState(() => window.innerWidth < MOBILE_BREAKPOINT_PX);
+
+  useEffect(() => {
+    const onResize = () => setIsMobile(window.innerWidth < MOBILE_BREAKPOINT_PX);
+    window.addEventListener("resize", onResize);
+    return () => window.removeEventListener("resize", onResize);
+  }, []);
 
   const makeObjectKey = (file) => {
     const ext = file?.name?.includes(".") ? file.name.split(".").pop() : "bin";
@@ -602,9 +611,22 @@ export default function MemoryArchitecture() {
           </div>
         </div>
 
-        <div style={styles.grid}>
+        <div
+          style={{
+            ...styles.grid,
+            gridTemplateColumns: isMobile ? "1fr" : styles.grid.gridTemplateColumns,
+            display: isMobile ? "flex" : styles.grid.display,
+            flexDirection: isMobile ? "column" : undefined,
+          }}
+        >
           {/* 左侧表单 */}
-          <div style={styles.formCard}>
+          <div
+            style={{
+              ...styles.formCard,
+              gridColumn: isMobile ? "1" : styles.formCard.gridColumn,
+              order: isMobile ? 3 : undefined,
+            }}
+          >
             <h2 style={styles.formTitle}>Create your custom home miniature</h2>
             <form onSubmit={handleSubmit}>
               <div style={styles.row2cols}>
@@ -798,9 +820,15 @@ export default function MemoryArchitecture() {
           </div>
 
           {/* 右侧列 - 案例展示移至顶部 */}
-          <div style={styles.rightColumn}>
+          <div
+            style={
+              isMobile
+                ? { display: "contents" }
+                : { ...styles.rightColumn, gridColumn: isMobile ? "1" : styles.rightColumn.gridColumn }
+            }
+          >
             {/* 1. 过往案例展示 */}
-            <div style={styles.caseCard}>
+            <div style={{ ...styles.caseCard, order: isMobile ? 1 : undefined }}>
               <h3 style={styles.caseTitle}>A recent case:</h3>
               <div style={styles.caseGrid}>
                 <div style={styles.caseItem}>
@@ -838,7 +866,7 @@ export default function MemoryArchitecture() {
             </div>
 
             {/* 2. Why this matters */}
-            <div style={styles.infoCard}>
+            <div style={{ ...styles.infoCard, order: isMobile ? 2 : undefined }}>
               <h3 style={styles.infoTitle}>Why this matters</h3>
               <ul style={{ listStyle: "none", paddingLeft: 0, margin: "16px 0 0" }}>
                 <li style={styles.listItem}>— Enhance client satisfaction with a lasting keepsake</li>
@@ -864,7 +892,7 @@ export default function MemoryArchitecture() {
             </div>
 
             {/* 3. ARTISAN'S PLEDGE */}
-            <div style={styles.pledgeCard}>
+            <div style={{ ...styles.pledgeCard, order: isMobile ? 4 : undefined }}>
               <p style={{ fontSize: "0.875rem", fontWeight: 300, letterSpacing: "0.3px", margin: "0 0 8px" }}>
                 ORDER TRACKING
               </p>
