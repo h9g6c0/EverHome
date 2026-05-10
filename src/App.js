@@ -744,6 +744,18 @@ export default function MemoryArchitecture() {
                     )}
                   </div>
                 </div>
+                <p
+                  style={{
+                    fontSize: "12px",
+                    color: "#9B8C7E",
+                    lineHeight: 1.5,
+                    margin: "10px 0 0",
+                    textAlign: "center",
+                  }}
+                >
+                  Please provide photos of the home from multiple angles, along with floor plans if available, to
+                  help us create a more accurate model.
+                </p>
               </div>
 
               <div style={styles.fullWidth}>
@@ -814,6 +826,7 @@ export default function MemoryArchitecture() {
                       +86 13816786022
                     </a>
                   </div>
+                  <div>Address: 1102,33,2727,Qilianshan South Rd, Shanghai</div>
                 </div>
               </div>
             </form>
