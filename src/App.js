@@ -592,10 +592,10 @@ export default function MemoryArchitecture() {
       <div style={styles.wrapper}>
         <div style={styles.header}>
           <h1 style={styles.title}>
-            A home you can hold. A <span style={styles.titleAccent}>memory</span> you won't lose.
+            Turn a sold home into a lasting <span style={styles.titleAccent}>memory</span>.
           </h1>
           <p style={styles.subtitle}>
-            Your home, hand-crafted to hold its memories.
+            Handcrafted architectural miniatures designed for meaningful clients.
           </p>
         </div>
 
@@ -627,7 +627,7 @@ export default function MemoryArchitecture() {
               order: isMobile ? 3 : undefined,
             }}
           >
-            <h2 style={styles.formTitle}>Create your custom home miniature</h2>
+            <h2 style={styles.formTitle}>Create a memorable closing gift</h2>
             <form onSubmit={handleSubmit}>
               <div style={styles.row2cols}>
                 <div>
@@ -678,9 +678,9 @@ export default function MemoryArchitecture() {
                     onChange={handleChange}
                     style={{ ...styles.input, cursor: "pointer" }}
                   >
-                    <option value="standard">Standard — $699</option>
-                    <option value="premium">Premium — $999</option>
-                    <option value="collector">Collector — $1199</option>
+                    <option value="standard">Standard — $699+</option>
+                    <option value="premium">Premium — $999+</option>
+                    <option value="collector">Collector — $1199+</option>
                   </select>
                 </div>
                 <div style={styles.checkboxWrapper}>
@@ -750,11 +750,12 @@ export default function MemoryArchitecture() {
                     color: "#9B8C7E",
                     lineHeight: 1.5,
                     margin: "10px 0 0",
-                    textAlign: "center",
+                    textAlign: "left",
                   }}
                 >
-                  Please provide photos of the home from multiple angles, along with floor plans if available, to
-                  help us create a more accurate model.
+                  Exterior photos from multiple angles are most helpful.
+                  <br />
+                  Floor plans, old listing photos, or interior references are also welcome.
                 </p>
               </div>
 
@@ -765,7 +766,7 @@ export default function MemoryArchitecture() {
                   value={form.notes}
                   onChange={handleChange}
                   rows="3"
-                  placeholder="Share the spaces and details that mattered most - the column where you loved to sit in the sun, the dining table where your family gathered, the staircase your pets always ran through..."
+                  placeholder="Tell us about the spaces that mattered most — the staircase your children ran down every morning, the porch where your family gathered, the table where holidays were shared..."
                   style={styles.textarea}
                   onFocus={(e) => (e.target.style.borderColor = "#C98A7A")}
                   onBlur={(e) => (e.target.style.borderColor = "#E5D9D0")}
@@ -826,7 +827,7 @@ export default function MemoryArchitecture() {
                       +86 13816786022
                     </a>
                   </div>
-                  <div>Address: 1102,33,2727,Qilianshan South Rd, Shanghai</div>
+                  
                 </div>
               </div>
             </form>
@@ -880,25 +881,26 @@ export default function MemoryArchitecture() {
 
             {/* 2. Why this matters */}
             <div style={{ ...styles.infoCard, order: isMobile ? 2 : undefined }}>
-              <h3 style={styles.infoTitle}>Why this matters</h3>
+              <h3 style={styles.infoTitle}>Why agents love this</h3>
               <ul style={{ listStyle: "none", paddingLeft: 0, margin: "16px 0 0" }}>
-                <li style={styles.listItem}>— Enhance client satisfaction with a lasting keepsake</li>
-                <li style={styles.listItem}>— Shareable, memorable, and unique</li>
-                <li style={styles.listItem}>— Every detail tells a story</li>
-                <li style={styles.listItem}>— Built with precision, finished by hand</li>
+                <li style={styles.listItem}>— Creates an unforgettable closing experience</li>
+                <li style={styles.listItem}>— Strengthens long-term client relationships</li>
+                <li style={styles.listItem}>— Naturally encourages referrals and word-of-mouth</li>
+                <li style={styles.listItem}>— A highly shareable luxury keepsake</li>
+                <li style={styles.listItem}>— Handcrafted with architectural precision</li>
               </ul>
               <div style={styles.divider}>
                 <div style={styles.priceRow}>
                   <span>Standard (no int. structure)</span>
-                  <span style={styles.priceValue}>$699</span>
+                  <span style={styles.priceValue}>$699+</span>
                 </div>
                 <div style={styles.priceRow}>
                   <span>Premium (int. structure)</span>
-                  <span style={styles.priceValue}>$999</span>
+                  <span style={styles.priceValue}>$999+</span>
                 </div>
                 <div style={styles.priceRow}>
                   <span>Collector (int. structure with funitures)</span>
-                  <span style={styles.priceValue}>$1199</span>
+                  <span style={styles.priceValue}>$1199+</span>
                 </div>
                 <p style={styles.footnote}>*estimated, based on architecture complexity</p>
               </div>
