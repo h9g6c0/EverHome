@@ -812,21 +812,11 @@ export default function MemoryArchitecture() {
                 <div style={{ fontSize: "0.875rem", color: "#6B625A", lineHeight: 1.6 }}>
                   <div>
                     Email:{" "}
-                    <a href="mailto:h9g6c0@gmail.com" style={{ color: "#C98A7A", textDecoration: "none" }}>
-                      h9g6c0@gmail.com
+                    <a href="mailto:support@everhome.studio" style={{ color: "#C98A7A", textDecoration: "none" }}>
+                      support@everhome.studio
                     </a>
                   </div>
-                  <div>
-                    WhatsApp:{" "}
-                    <a
-                      href="https://wa.me/8613816786022"
-                      target="_blank"
-                      rel="noreferrer"
-                      style={{ color: "#C98A7A", textDecoration: "none" }}
-                    >
-                      +86 13816786022
-                    </a>
-                  </div>
+                  
                   
                 </div>
               </div>
